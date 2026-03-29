@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GFG T-Shirt Registration</title>
-  <meta name="description" content="Register for your GeeksforGeeks t-shirt by submitting your roll number, name, and preferred size." />
+  <title>GFG Swags Registration</title>
+  <meta name="description"
+    content="Register for your GeeksforGeeks swags by submitting your roll number, name, and preferred size." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
       --gfg-green: #2f8d46;
@@ -40,8 +48,8 @@
       align-items: center;
       justify-content: center;
       padding: 24px 16px;
-      background-image: radial-gradient(ellipse at 20% 10%, rgba(47,141,70,0.12) 0%, transparent 60%),
-                        radial-gradient(ellipse at 80% 90%, rgba(67,181,96,0.08) 0%, transparent 60%);
+      background-image: radial-gradient(ellipse at 20% 10%, rgba(47, 141, 70, 0.12) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 90%, rgba(67, 181, 96, 0.08) 0%, transparent 60%);
     }
 
     /* ── Header ── */
@@ -60,7 +68,7 @@
       padding: 8px 14px;
       border-radius: var(--radius-sm);
       letter-spacing: 0.5px;
-      box-shadow: 0 0 20px rgba(47,141,70,0.5);
+      box-shadow: 0 0 20px rgba(47, 141, 70, 0.5);
     }
 
     .site-title {
@@ -87,13 +95,20 @@
       padding: 36px 32px;
       width: 100%;
       max-width: 460px;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(67,181,96,0.06);
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(67, 181, 96, 0.06);
       animation: fadeUp 0.5s ease both;
     }
 
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .card-header {
@@ -142,20 +157,27 @@
     input[type="text"]:focus,
     select:focus {
       border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(67,181,96,0.15);
+      box-shadow: 0 0 0 3px rgba(67, 181, 96, 0.15);
     }
 
-    input[type="text"]::placeholder { color: var(--muted); }
-    select option { background: var(--surface2); }
+    input[type="text"]::placeholder {
+      color: var(--muted);
+    }
+
+    select option {
+      background: var(--surface2);
+    }
 
     /* Size grid */
     .size-grid {
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 8px;
     }
 
-    .size-option input { display: none; }
+    .size-option input {
+      display: none;
+    }
 
     .size-option label {
       display: flex;
@@ -174,11 +196,11 @@
       transition: all 0.18s;
     }
 
-    .size-option input:checked + label {
-      background: rgba(47,141,70,0.2);
+    .size-option input:checked+label {
+      background: rgba(47, 141, 70, 0.2);
       border-color: var(--accent);
       color: var(--accent);
-      box-shadow: 0 0 10px rgba(67,181,96,0.2);
+      box-shadow: 0 0 10px rgba(67, 181, 96, 0.2);
     }
 
     .size-option label:hover {
@@ -200,7 +222,7 @@
       cursor: pointer;
       margin-top: 8px;
       transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
-      box-shadow: 0 4px 20px rgba(47,141,70,0.35);
+      box-shadow: 0 4px 20px rgba(47, 141, 70, 0.35);
       letter-spacing: 0.3px;
       position: relative;
       overflow: hidden;
@@ -209,10 +231,12 @@
     .btn:hover:not(:disabled) {
       opacity: 0.9;
       transform: translateY(-1px);
-      box-shadow: 0 8px 28px rgba(47,141,70,0.45);
+      box-shadow: 0 8px 28px rgba(47, 141, 70, 0.45);
     }
 
-    .btn:active:not(:disabled) { transform: translateY(0); }
+    .btn:active:not(:disabled) {
+      transform: translateY(0);
+    }
 
     .btn:disabled {
       opacity: 0.6;
@@ -223,7 +247,7 @@
       display: inline-block;
       width: 16px;
       height: 16px;
-      border: 2px solid rgba(255,255,255,0.4);
+      border: 2px solid rgba(255, 255, 255, 0.4);
       border-top-color: #fff;
       border-radius: 50%;
       animation: spin 0.7s linear infinite;
@@ -231,7 +255,11 @@
       margin-right: 8px;
     }
 
-    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
 
     /* ── Alert banners ── */
     .alert {
@@ -247,21 +275,35 @@
       line-height: 1.5;
     }
 
-    @keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
+    @keyframes fadeIn {
+      from {
+        opacity: 0
+      }
 
-    .alert.show { display: flex; }
+      to {
+        opacity: 1
+      }
+    }
 
-    .alert-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+    .alert.show {
+      display: flex;
+    }
+
+    .alert-icon {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
 
     .alert-success {
       background: var(--success-bg);
-      border: 1px solid rgba(63,185,80,0.35);
+      border: 1px solid rgba(63, 185, 80, 0.35);
       color: var(--success);
     }
 
     .alert-error {
       background: var(--warning-bg);
-      border: 1px solid rgba(248,81,73,0.35);
+      border: 1px solid rgba(248, 81, 73, 0.35);
       color: var(--error);
     }
 
@@ -275,19 +317,21 @@
       animation: fadeUp 0.4s ease both;
     }
 
-    .success-screen.show { display: flex; }
+    .success-screen.show {
+      display: flex;
+    }
 
     .checkmark {
       width: 72px;
       height: 72px;
       border-radius: 50%;
-      background: rgba(47,141,70,0.18);
+      background: rgba(47, 141, 70, 0.18);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 2.4rem;
       margin-bottom: 20px;
-      box-shadow: 0 0 30px rgba(67,181,96,0.3);
+      box-shadow: 0 0 30px rgba(67, 181, 96, 0.3);
     }
 
     .success-title {
@@ -303,7 +347,10 @@
       margin-bottom: 4px;
     }
 
-    .success-detail span { color: var(--text); font-weight: 600; }
+    .success-detail span {
+      color: var(--text);
+      font-weight: 600;
+    }
 
     .register-again {
       margin-top: 24px;
@@ -318,7 +365,10 @@
       transition: border-color 0.2s, color 0.2s;
     }
 
-    .register-again:hover { border-color: var(--accent); color: var(--accent); }
+    .register-again:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
 
     /* ── Footer ── */
     .footer {
@@ -329,16 +379,22 @@
     }
 
     @media (max-width: 480px) {
-      .card { padding: 28px 20px; }
-      .size-grid { grid-template-columns: repeat(3, 1fr); }
+      .card {
+        padding: 28px 20px;
+      }
+
+      .size-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
   </style>
 </head>
+
 <body>
 
   <div class="logo-row">
     <div class="logo-badge">GFG</div>
-    <div class="site-title">T-Shirt Registration</div>
+    <div class="site-title">Swags Registration</div>
   </div>
   <p class="subtitle">GeeksforGeeks Student Chapter</p>
 
@@ -346,42 +402,40 @@
 
     <!-- Registration Form -->
     <div id="form-view">
-      <div class="card-header">Claim your free T-shirt 👕</div>
+      <div class="card-header">Claim your free Swags 🎁</div>
       <p class="card-desc">Fill in your details below. Each roll number can only be registered once.</p>
 
       <form id="reg-form" novalidate>
 
         <div class="form-group">
           <label for="rollNumber">Roll Number</label>
-          <input
-            type="text"
-            id="rollNumber"
-            placeholder="e.g. 22BCE1234"
-            autocomplete="off"
-            required
-          />
+          <input type="text" id="rollNumber" placeholder="e.g. 22BCE1234" autocomplete="off" required />
         </div>
 
         <div class="form-group">
           <label for="name">Full Name</label>
-          <input
-            type="text"
-            id="name"
-            placeholder="e.g. Vijay Kumar"
-            autocomplete="off"
-            required
-          />
+          <input type="text" id="name" placeholder="e.g. Vijay Kumar" autocomplete="off" required />
+        </div>
+
+        <div class="form-group">
+          <label for="year">Year of Study</label>
+          <select id="year" required>
+            <option value="" disabled selected>Select your year</option>
+            <option value="1st Year">1st Year</option>
+            <option value="2nd Year">2nd Year</option>
+            <option value="3rd Year">3rd Year</option>
+            <option value="4th Year">4th Year</option>
+          </select>
         </div>
 
         <div class="form-group">
           <label>T-Shirt Size</label>
           <div class="size-grid">
-            <div class="size-option"><input type="radio" name="size" id="sXS" value="XS" /><label for="sXS">XS</label></div>
-            <div class="size-option"><input type="radio" name="size" id="sS"  value="S"  /><label for="sS">S</label></div>
-            <div class="size-option"><input type="radio" name="size" id="sM"  value="M"  /><label for="sM">M</label></div>
-            <div class="size-option"><input type="radio" name="size" id="sL"  value="L"  /><label for="sL">L</label></div>
-            <div class="size-option"><input type="radio" name="size" id="sXL" value="XL" /><label for="sXL">XL</label></div>
-            <div class="size-option"><input type="radio" name="size" id="sXXL" value="XXL"/><label for="sXXL">XXL</label></div>
+            <div class="size-option"><input type="radio" name="size" id="sS" value="S" /><label for="sS">S</label></div>
+            <div class="size-option"><input type="radio" name="size" id="sM" value="M" /><label for="sM">M</label></div>
+            <div class="size-option"><input type="radio" name="size" id="sL" value="L" /><label for="sL">L</label></div>
+            <div class="size-option"><input type="radio" name="size" id="sXL" value="XL" /><label for="sXL">XL</label>
+            </div>
           </div>
         </div>
 
@@ -406,6 +460,7 @@
       <div class="success-title">You're registered!</div>
       <p class="success-detail">Roll Number: <span id="s-roll"></span></p>
       <p class="success-detail">Name: <span id="s-name"></span></p>
+      <p class="success-detail">Year: <span id="s-year"></span></p>
       <p class="success-detail">T-Shirt Size: <span id="s-size"></span></p>
       <button class="register-again" onclick="resetForm()">Register another person</button>
     </div>
@@ -417,7 +472,7 @@
   <script>
     // ── CONFIG ──────────────────────────────────────────────────────────────
     // IMPORTANT: Replace this with your deployed Apps Script Web App URL
-    const APPS_SCRIPT_URL = "YOUR_APPS_SCRIPT_URL_HERE";
+    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwuFbncyGkiCdxEu1HHGyNUvX_KrN4JANNxSYYuWWEt-VJIeB12M-DtwpSHBr8yEq9V9A/exec";
     // ────────────────────────────────────────────────────────────────────────
 
     const form = document.getElementById("reg-form");
@@ -451,11 +506,13 @@
 
       const rollNumber = document.getElementById("rollNumber").value.trim();
       const name = document.getElementById("name").value.trim();
+      const year = document.getElementById("year").value;
       const sizeEl = document.querySelector('input[name="size"]:checked');
 
       // Client-side validation
       if (!rollNumber) return showError("Please enter your roll number.");
       if (!name) return showError("Please enter your full name.");
+      if (!year) return showError("Please select your year of study.");
       if (!sizeEl) return showError("Please select a t-shirt size.");
 
       if (APPS_SCRIPT_URL === "YOUR_APPS_SCRIPT_URL_HERE") {
@@ -472,7 +529,7 @@
         const response = await fetch(APPS_SCRIPT_URL, {
           method: "POST",
           headers: { "Content-Type": "text/plain" },
-          body: JSON.stringify({ rollNumber, name, size }),
+          body: JSON.stringify({ rollNumber, name, year, size }),
         });
 
         const result = await response.json();
@@ -481,6 +538,7 @@
           // Show success screen
           document.getElementById("s-roll").textContent = rollNumber;
           document.getElementById("s-name").textContent = name;
+          document.getElementById("s-year").textContent = year;
           document.getElementById("s-size").textContent = size;
           document.getElementById("form-view").style.display = "none";
           document.getElementById("success-view").classList.add("show");
@@ -499,4 +557,5 @@
     });
   </script>
 </body>
+
 </html>
