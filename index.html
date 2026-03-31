@@ -433,8 +433,25 @@
       margin-bottom: 18px;
     }
 
+    .connect-note {
+      font-size: 0.82rem;
+      color: #c3f0cb;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .required-mark {
+      color: var(--error);
+      font-weight: 800;
+      margin-left: 4px;
+    }
+
     .connect-btn {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
       width: 100%;
       text-align: center;
       text-decoration: none;
@@ -447,6 +464,15 @@
       font-weight: 700;
       padding: 10px 12px;
       transition: transform 0.15s, box-shadow 0.2s, background 0.2s;
+    }
+
+    .connect-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(163, 228, 176, 0.7);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
     }
 
     .connect-btn:hover {
@@ -590,7 +616,7 @@
 
         <div class="form-group">
           <label for="name">Full Name</label>
-          <input type="text" id="name" placeholder="e.g. John Snow" autocomplete="off" required />
+          <input type="text" id="name" placeholder="e.g. Vijay Kumar" autocomplete="off" required />
         </div>
 
         <div class="form-group">
@@ -649,9 +675,17 @@
       <div class="modal-title" id="modal-title">📋 Review Your Details</div>
       <p class="modal-subtitle">Please confirm your information before submitting.</p>
 
+      <p class="connect-note">Ensure the following accounts bfeore registrations <span class="required-mark" aria-label="mandatory">*</span></p>
+
       <div class="connect-links" aria-label="GFG Connect links">
-        <a class="connect-btn" href="https://www.geeksforgeeks.org/profile/satvikkolht0t" target="_blank" rel="noopener noreferrer">Follow Satvik on GFG</a>
-        <a class="connect-btn" href="https://www.geeksforgeeks.org/profile/amgothvijav0pv" target="_blank" rel="noopener noreferrer">Follow Vijay on GFG</a>
+        <a class="connect-btn" href="https://www.geeksforgeeks.org/profile/amgothvijav0pv" target="_blank" rel="noopener noreferrer">
+          <img class="connect-avatar" src="vijay.png" alt="Vijay profile picture" />
+          <span>Follow Vijay on GFG</span>
+        </a>
+        <a class="connect-btn" href="https://www.geeksforgeeks.org/profile/satvikkolht0t" target="_blank" rel="noopener noreferrer">
+          <img class="connect-avatar" src="satvik.png" alt="Satvik profile picture" />
+          <span>Follow Satvik on GFG</span>
+        </a>
       </div>
 
       <table class="confirm-table" id="confirm-table">
