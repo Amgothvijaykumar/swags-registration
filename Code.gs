@@ -37,11 +37,25 @@ function doPost(e) {
     sheet.getRange(1, 1, 1, 5).setFontWeight("bold");
     sheet.getRange(1, 1, 1, 5).setBackground("#1e7e34");
     sheet.getRange(1, 1, 1, 5).setFontColor("#ffffff");
+    lastRow = sheet.getLastRow();
   }
 
-  // Append the new registration
+  // Fill the first empty row in column A (starting from row 2) before using a new row.
+  var targetRow = 2;
+  if (lastRow >= 2) {
+    var firstColumnValues = sheet.getRange(2, 1, lastRow - 1, 1).getValues();
+    targetRow = lastRow + 1;
+    for (var j = 0; j < firstColumnValues.length; j++) {
+      if (firstColumnValues[j][0].toString().trim() === "") {
+        targetRow = j + 2;
+        break;
+      }
+    }
+  }
+
+  // Write the new registration into the calculated row.
   var timestamp = new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
-  sheet.appendRow([rollNumber, name, year, size, timestamp]);
+  sheet.getRange(targetRow, 1, 1, 5).setValues([[rollNumber, name, year, size, timestamp]]);
 
   return ContentService
     .createTextOutput(JSON.stringify({ status: "success", message: "Registration successful! 🎉" }))

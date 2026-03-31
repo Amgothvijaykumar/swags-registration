@@ -426,6 +426,35 @@
       margin-bottom: 24px;
     }
 
+    .connect-links {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .connect-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      text-decoration: none;
+      background: rgba(67, 181, 96, 0.14);
+      border: 1px solid rgba(67, 181, 96, 0.45);
+      border-radius: var(--radius-sm);
+      color: #a3e4b0;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.84rem;
+      font-weight: 700;
+      padding: 10px 12px;
+      transition: transform 0.15s, box-shadow 0.2s, background 0.2s;
+    }
+
+    .connect-btn:hover {
+      background: rgba(67, 181, 96, 0.24);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(47, 141, 70, 0.24);
+    }
+
     .confirm-table {
       width: 100%;
       border-collapse: collapse;
@@ -620,6 +649,11 @@
       <div class="modal-title" id="modal-title">📋 Review Your Details</div>
       <p class="modal-subtitle">Please confirm your information before submitting.</p>
 
+      <div class="connect-links" aria-label="GFG Connect links">
+        <a class="connect-btn" href="https://www.geeksforgeeks.org/profile/satvikkolht0t" target="_blank" rel="noopener noreferrer">Follow Satvik on GFG</a>
+        <a class="connect-btn" href="https://www.geeksforgeeks.org/profile/amgothvijav0pv" target="_blank" rel="noopener noreferrer">Follow Vijay on GFG</a>
+      </div>
+
       <table class="confirm-table" id="confirm-table">
         <tr>
           <td>Roll Number</td>
@@ -651,7 +685,7 @@
   <script>
     // ── CONFIG ──────────────────────────────────────────────────────────────
     // IMPORTANT: Replace this with your deployed Apps Script Web App URL
-    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwuFbncyGkiCdxEu1HHGyNUvX_KrN4JANNxSYYuWWEt-VJIeB12M-DtwpSHBr8yEq9V9A/exec";
+    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxPPwwoWo9D597QbWaOPGdr8f0jxzCa2UwR_1iEvaw6lI8KwZCsGihkV8rGsV0-WY4bzA/exec";
     // ────────────────────────────────────────────────────────────────────────
 
     const form = document.getElementById("reg-form");
