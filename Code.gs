@@ -18,8 +18,21 @@ function doPost(e) {
       .setMimeType(ContentService.MimeType.JSON);
   }
 
-  // Check for duplicate roll number
+  // Get last row once — used by both checks below
   var lastRow = sheet.getLastRow();
+
+  // Check S-size stock limit (max 6)
+  if (size === "S" && lastRow >= 2) {
+    var sizeValues = sheet.getRange(2, 4, lastRow - 1, 1).getValues();
+    var sCount = sizeValues.filter(function(r) { return r[0].toString().trim() === "S"; }).length;
+    if (sCount >= 6) {
+      return ContentService
+        .createTextOutput(JSON.stringify({ status: "size_limit", message: "S size is fully booked (only 6 available). Please choose M instead." }))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
+  }
+
+  // Check for duplicate roll number
   if (lastRow >= 2) {
     var rollNumbers = sheet.getRange(2, 1, lastRow - 1, 1).getValues();
     for (var i = 0; i < rollNumbers.length; i++) {
